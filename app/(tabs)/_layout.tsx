@@ -7,7 +7,7 @@ import {IconSymbol} from '@/components/ui/IconSymbol'
 import TabBarBackground from '@/components/ui/TabBarBackground'
 import {Colors} from '@/constants/Colors'
 import {useColorScheme} from '@/hooks/useColorScheme'
-import {NotebookPen, MessageCircleWarning, FileCheck} from 'lucide-react-native'
+import {NotebookPen, MessageCircleWarning, FileCheck, Home} from 'lucide-react-native'
 
 export default function TabLayout() {
   const colorScheme = useColorScheme()
@@ -17,7 +17,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
+        // headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
@@ -31,6 +31,15 @@ export default function TabLayout() {
     >
       <Tabs.Screen
         name='index'
+        options={{
+          tabBarLabelStyle: tabBarLabelStyle,
+          headerTitle: 'Tech Task Manager',
+          title: 'Home',
+          tabBarIcon: ({color}) => <Home size={26} color={color} />
+        }}
+      />
+      <Tabs.Screen
+        name='workOrders'
         options={{
           tabBarLabelStyle: tabBarLabelStyle,
           title: 'Work Orders',
@@ -49,7 +58,7 @@ export default function TabLayout() {
         name='assignedWorkOrders'
         options={{
           tabBarLabelStyle: tabBarLabelStyle,
-          title: 'Assigned Work Orders',
+          title: 'Assigned Orders',
           tabBarIcon: ({color}) => <FileCheck size={26} color={color} />
         }}
       />
