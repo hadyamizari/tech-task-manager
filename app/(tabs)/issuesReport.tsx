@@ -20,9 +20,7 @@ export default IssuesReport
 
 const createStyles = (theme: MD3Theme) =>
   StyleSheet.create({
-    container: {
-      flex: 1,
-      margin: 10
-    },
-    title: {color: theme.colors.outline, fontWeight: '400', marginTop: rem(15)}
+    container: {flex: 1, margin: 15},
+    title: {color: theme.colors.outline, fontWeight: '400'},
+    surface: {backgroundColor: 'white', paddingHorizontal: rem(20), padding: rem(10), borderRadius: 15}
   })
